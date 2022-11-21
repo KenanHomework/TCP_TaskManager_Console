@@ -22,7 +22,7 @@ string responce = null;
 while (true)
 {
     Console.WriteLine("Write Command or HELP");
-    var str = Console.ReadLine();
+    var str = Console.ReadLine().ToUpper();
 
     if (str.ToUpper() == "HELP")
     {
@@ -38,10 +38,10 @@ while (true)
 
     var input = str.Split(' ');
 
-    switch (input[0].ToUpper())
+    switch (input[0])
     {
         case Command.ProcessList:
-            command = new Command() { Text = input[0].ToUpper() };
+            command = new Command() { Text = input[0] };
             bw.Write(JsonSerializer.Serialize(command));
             responce = br.ReadString();
             var processesName = JsonSerializer.Deserialize<string[]>(responce);
@@ -60,7 +60,7 @@ while (true)
                 break;
             }
 
-            command = new Command() { Text = input[0].ToUpper(), Param = input[1] };
+            command = new Command() { Text = input[0], Param = input[1] };
             bw.Write(JsonSerializer.Serialize(command));
             responce = br.ReadString();
 
@@ -74,7 +74,7 @@ while (true)
                 break;
             }
 
-            command = new Command() { Text = input[0].ToUpper(), Param = input[1] };
+            command = new Command() { Text = input[0], Param = input[1] };
             bw.Write(JsonSerializer.Serialize(command));
             responce = br.ReadString();
 

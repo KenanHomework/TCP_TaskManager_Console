@@ -46,7 +46,7 @@ while (true)
                 {
                     try
                     {
-                        if (p.ProcessName == param)
+                        if (p.ProcessName.ToUpper() == param)
                         {
                             p.Kill();
                             status = "Succes";
