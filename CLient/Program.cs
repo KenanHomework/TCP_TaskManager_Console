@@ -24,7 +24,7 @@ while (true)
     Console.WriteLine("Write Command or HELP");
     var str = Console.ReadLine();
 
-    if (str == "HELP")
+    if (str.ToUpper() == "HELP")
     {
         Console.WriteLine("\nCommand List:\n");
         Console.WriteLine(Command.ProcessList);

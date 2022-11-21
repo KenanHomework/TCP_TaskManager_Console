@@ -54,7 +54,7 @@ while (true)
                     }
                     catch
                     {
-                        status = "Fail";
+                        status = "Failed";
                     }
                 });
 
@@ -75,7 +75,7 @@ while (true)
                 }
                 catch
                 {
-                    status = "Fail";
+                    status = "Failed";
                 }
 
 
